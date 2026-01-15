@@ -1,0 +1,45 @@
+ciro.print("Hola, bienvenido a CiroScript!")
+ciro.sleep(2)
+
+ciro.print("CiroScript es un lenguaje declarativo diseñado para introducir conceptos de programación de manera sencilla.")
+ciro.sleep(2)
+ciro.input(1, "Cual es tu nombre?")
+ciro.sleep(1) 
+ciro.print("Hola, Juan")
+ciro.print("Era ese tu nombre?")
+ciro.input(2, "si/no")
+ciro.sleep(1)
+
+ciro.if (2) EQUALS "si"
+    ciro.print("Pero tu no escribiste eso")
+    ciro.sleep(2)
+    ciro.print("Bueno, continuemos")
+    ciro.print("Puedes leer el README.md para más información sobre CiroScript.")
+ciro.end
+
+
+ciro.if (2) EQUALS "no"
+    ciro.input(3, "Mala mia, cual es tu nombre?")
+    ciro.sleep(2)
+ciro.end 
+
+ciro.if (3) EQUALS (1)
+    ciro.print("Ahora si, mucho gusto.")
+    ciro.sleep(2)
+    ciro.print("Bueno, continuemos")
+    ciro.print("Puedes leer el README.md para más información sobre CiroScript.")
+ciro.end
+
+ciro.if (3) ISNOT (1)
+    ciro.print("Bueno, supongo no conoces tu nombre. Mucho gusto.")
+    ciro.print("Puedes leer el README.md para más información sobre CiroScript.")
+ciro.end
+
+
+ciro.print("Puedes crear variables, estructuras de control y funciones de manera intuitiva.")
+ciro.sleep(2)
+
+
+ciro.print("¡Explora, experimenta y diviértete programando con CiroScript!")
+ciro.sleep(2)
+
