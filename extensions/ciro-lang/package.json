@@ -1,0 +1,50 @@
+{
+  "name": "ciro-lang",
+  "displayName": "CiroScript Language Support",
+  "description": "Syntax highlighting and snippets for CiroScript - simple to learn, hard to master",
+  "version": "1.1.0",
+  "publisher": "ciro-lang",
+  "author": "Ciro Camano",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cirocamano/CIRO"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "ciro",
+    "ciroscript",
+    "scripting",
+    "automation"
+  ],
+  "icon": "icon.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ciro",
+        "aliases": ["CiroScript", "Ciro", "ciro"],
+        "extensions": [".ciro"],
+        "configuration": "./language-configuration.json",
+        "firstLine": "^#!.*\\bciro\\b"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ciro",
+        "scopeName": "source.ciro",
+        "path": "./syntaxes/ciro.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ciro",
+        "path": "./snippets/ciro.json"
+      }
+    ]
+  }
+}

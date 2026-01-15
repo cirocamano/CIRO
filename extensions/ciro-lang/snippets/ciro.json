@@ -1,0 +1,78 @@
+{
+  "Print": {
+    "prefix": "print",
+    "body": "ciro.print($1)",
+    "description": "Print value to console"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "ciro.if $1",
+      "    $2",
+      "ciro.end"
+    ],
+    "description": "Conditional statement"
+  },
+  "If-Else statement": {
+    "prefix": "ife",
+    "body": [
+      "ciro.if $1",
+      "    $2",
+      "ciro.else",
+      "    $3",
+      "ciro.end"
+    ],
+    "description": "Conditional with else"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": [
+      "ciro.while $1",
+      "    $2",
+      "ciro.end"
+    ],
+    "description": "While loop"
+  },
+  "Repeat loop": {
+    "prefix": "repeat",
+    "body": [
+      "ciro.repeat $1",
+      "    $2",
+      "ciro.end"
+    ],
+    "description": "Repeat N times"
+  },
+  "Function": {
+    "prefix": "func",
+    "body": [
+      "ciro.func $1",
+      "    $2",
+      "ciro.end"
+    ],
+    "description": "Define a function"
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": "ciro.var($1)=${2:value}",
+    "description": "Declare and assign variable"
+  },
+  "List": {
+    "prefix": "list",
+    "body": "ciro.list($1)=[${2}]",
+    "description": "Create a list"
+  },
+  "Input": {
+    "prefix": "input",
+    "body": "ciro.input(${1:slot}, \"${2:prompt}\")",
+    "description": "Get user input"
+  },
+  "Scene": {
+    "prefix": "scene",
+    "body": [
+      "ciro.scene $1",
+      "    $2",
+      "ciro.end"
+    ],
+    "description": "Define a scene"
+  }
+}

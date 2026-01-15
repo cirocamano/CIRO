@@ -1,0 +1,182 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "CiroScript",
+  "scopeName": "source.ciro",
+
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#control" },
+    { "include": "#functions" },
+    { "include": "#advanced" },
+    { "include": "#ui" },
+    { "include": "#operators" },
+    { "include": "#variables" },
+    { "include": "#numbers" },
+    { "include": "#strings" },
+    { "include": "#constants" },
+    { "include": "#lists" },
+    { "include": "#fileops" }
+  ],
+
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.ciro",
+          "begin": "<<",
+          "end": ">>"
+        },
+        {
+          "name": "comment.line.ciro",
+          "match": "//.*"
+        }
+      ]
+    },
+
+    "control": {
+      "patterns": [
+        {
+          "name": "keyword.control.ciro",
+          "match": "\\bciro\\.(if|else|end|while|repeat|break|continue|scene|play|success|fail)\\b"
+        }
+      ]
+    },
+
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.ciro",
+          "match": "\\bciro\\.(var|set|clear|print|input|pause|sleep|wait|tick|random|key)\\b"
+        }
+      ]
+    },
+
+    "advanced": {
+      "patterns": [
+        {
+          "name": "entity.name.function.ciro",
+          "match": "\\bciro\\.(func|call)\\b"
+        },
+        {
+          "name": "support.function.debug.ciro",
+          "match": "\\bciro\\.debug\\.(on|off|mem|print)\\b"
+        },
+        {
+          "name": "support.function.memory.ciro",
+          "match": "\\bciro\\.(push|pop|get|setat|len|insert|remove)\\b"
+        }
+      ]
+    },
+
+    "ui": {
+      "patterns": [
+        {
+          "name": "support.namespace.ui.ciro",
+          "match": "\\bciro\\.ui\\.(clear|home|goto|print|printat|color|reset|hide_cursor|show_cursor|input|menu)\\b"
+        },
+        {
+          "name": "constant.language.color.ciro",
+          "match": "\\b(BLACK|RED|GREEN|YELLOW|BLUE|MAGENTA|CYAN|WHITE)\\b"
+        }
+      ]
+    },
+
+    "fileops": {
+      "patterns": [
+        {
+          "name": "support.function.file.ciro",
+          "match": "\\bciro\\.file\\.(read|write)\\b"
+        }
+      ]
+    },
+
+    "lists": {
+      "patterns": [
+        {
+          "name": "keyword.other.list.ciro",
+          "match": "\\bciro\\.list\\b"
+        },
+        {
+          "name": "meta.brackets.square.ciro",
+          "begin": "\\[",
+          "end": "\\]",
+          "patterns": [
+            { "include": "$self" }
+          ]
+        }
+      ]
+    },
+
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.ciro",
+          "match": "\\b(AND|OR|NOT)\\b"
+        },
+        {
+          "name": "keyword.operator.comparison.ciro",
+          "match": "\\b(EQUALS|IS|ISNOT|GREATER|LESS|ATLEAST|ATMOST|CONTAINS)\\b"
+        },
+        {
+          "name": "keyword.operator.arithmetic.ciro",
+          "match": "\\b(PLUS|MINUS|ADD|MULT|DIV|FROM|TO|AT|INTO|TIMEOUT|FOR)\\b"
+        }
+      ]
+    },
+
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.slot.ciro",
+          "match": "\\(\\d+\\)"
+        },
+        {
+          "name": "variable.parameter.ciro",
+          "match": "\\b(ms|segundos|microsegundos|fila|col|valor|nombre)\\b"
+        }
+      ]
+    },
+
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.ciro",
+          "match": "\\b\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.float.ciro",
+          "match": "\\b\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.negative.ciro",
+          "match": "\\b-\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.ciro",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.ciro",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.ciro",
+          "match": "\\b(true|false|yes|no|on|off)\\b"
+        }
+      ]
+    }
+  }
+}

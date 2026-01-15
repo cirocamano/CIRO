@@ -1,0 +1,54 @@
+{
+  "comments": {
+    "lineComment": "//",
+    "blockComment": ["<<", ">>"]
+  },
+
+  "brackets": [
+    ["(", ")"],
+    ["[", "]"],
+    ["{", "}"],
+    ["\"", "\""]
+  ],
+
+  "autoClosingPairs": [
+    { "open": "(", "close": ")", "notIn": ["string", "comment"] },
+    { "open": "[", "close": "]", "notIn": ["string", "comment"] },
+    { "open": "\"", "close": "\"", "notIn": ["string", "comment"] }
+  ],
+
+  "autoCloseBefore": ";:.,=}])>` \n\t",
+
+  "surroundingPairs": [
+    ["(", ")"],
+    ["[", "]"],
+    ["{", "}"],
+    ["\"", "\""]
+  ],
+
+  "indentationRules": {
+    "increaseIndentPattern": "^\\s*(ciro\\.(if|while|repeat|func|scene|class))\\b.*$",
+    "decreaseIndentPattern": "^\\s*(ciro\\.(else|end))\\b.*$",
+    "unIndentedLinePattern": "^\\s*(?:<<.*>>|//.*|$)"
+  },
+
+  "folding": {
+    "markers": {
+      "start": "^\\s*ciro\\.(if|while|repeat|func|scene|class)\\b",
+      "end": "^\\s*ciro\\.end\\b"
+    }
+  },
+
+  "wordPattern": "[a-zA-Z_][a-zA-Z0-9_]*|\\d+|\\$?\\d+|\\(\\d+\\)",
+
+  "onEnterRules": [
+    {
+      "beforeText": "^\\s*(ciro\\.(if|while|repeat|func|scene|class))\\b.*$",
+      "action": { "indent": "indent" }
+    },
+    {
+      "beforeText": "^\\s*(ciro\\.end)\\b.*$",
+      "action": { "indent": "outdent" }
+    }
+  ]
+}
